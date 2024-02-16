@@ -4,33 +4,34 @@
 const _startBtn = document.querySelector("#start-btn");
 const _timer = document.querySelector(".timer");
 
-let breathingSeconds = 0;
-let breathHoldSeconds = 0;
-let interval;
-let startTimer = 0;
-let elapsedTime = 0;
+let breathingSeconds;
+let holdingSeconds;
 
-const start = () => {
-    if (!interval) {
-        startTimer = Date.now() - elapsedTime;
-        interval = setInterval(update, 1000);
-    }
+const startBreathingTimer = () => {
+    breathingSeconds = 6;
+    
+    const timer = setInterval(function() {
+        breathingSeconds--;
+        _timer.innerHTML = `${breathingSeconds}`;
+
+        if (breathingSeconds === 0) {
+            clearInterval(timer);
+            startHoldingTimer();
+        }
+    }, 1000);
 }
 
-const update = () => {
-    elapsedTime = Date.now() - startTimer;
-
-    breathingSeconds = Math.floor((elapsedTime / 1000));
-
-    _timer.innerHTML = `${countDownBreathing(breathingSeconds)}`;
+const startHoldingTimer = () => {
+    holdingSeconds = 6;
+    
+    const timer = setInterval(function() {
+        if (holdingSeconds !== 0) {
+            holdingSeconds--;
+            _timer.innerHTML = `${holdingSeconds}`;
+        } else {
+            clearInterval(timer);
+        }
+    }, 1000)
 }
 
-const countDownBreathing = (num) => {
-    return (100 - num);
-}
-
-const countDownHolding = (num) => {
-    return (15 - num);
-}
-
-_startBtn.addEventListener("click", start);
+_startBtn.addEventListener("click", startBreathingTimer);
