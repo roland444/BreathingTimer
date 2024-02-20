@@ -10,21 +10,39 @@ body {
 
 button {
     width: 5rem;
-    height: 35px;
+    height: 3rem;
 }
 
 .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 5rem;
-    height: 200px;
     margin: 7.5rem auto;
 }
 
 .timer {
     width: 4rem;
-    height: 50px;
-    margin: 25px auto;
-    padding-top: 5px;
+    height: 32px;
+    margin: 10px auto;
     text-align: center;
     font-size: 30px;
     background-color: rgb(85, 85, 85);
+}
+
+.options-sessions {
+    text-align: center;
+    margin: 10px 0 10px 0;
+}
+
+.options-sessions label {
+    font-size: 1.1rem;
+}
+
+
+#sessions, #seconds {
+    width: 3.5rem;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 5px 0 5px 0;
 }

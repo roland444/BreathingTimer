@@ -8,30 +8,32 @@ let breathingSeconds;
 let holdingSeconds;
 
 const startBreathingTimer = () => {
-    breathingSeconds = 6;
+    let sessions = document.getElementById("sessions").value;
+    let seconds = document.getElementById("seconds").value;
     
-    const timer = setInterval(function() {
+    breathingSeconds = parseInt(seconds) + 1;
+    holdingSeconds = 16;
+
+    _startBtn.disabled = true;
+ 
+    const timer = setInterval(() => {
         breathingSeconds--;
         _timer.innerHTML = `${breathingSeconds}`;
 
         if (breathingSeconds === 0) {
             clearInterval(timer);
-            startHoldingTimer();
+            
+            const holdingTimer = setInterval(() => {
+                holdingSeconds--;
+                _timer.innerHTML = `${holdingSeconds}`;
+                
+                if (holdingSeconds === 0) {
+                    clearInterval(holdingTimer);
+                    _startBtn.disabled = false;
+                }
+            }, 1000)
         }
     }, 1000);
-}
-
-const startHoldingTimer = () => {
-    holdingSeconds = 6;
-    
-    const timer = setInterval(function() {
-        if (holdingSeconds !== 0) {
-            holdingSeconds--;
-            _timer.innerHTML = `${holdingSeconds}`;
-        } else {
-            clearInterval(timer);
-        }
-    }, 1000)
 }
 
 _startBtn.addEventListener("click", startBreathingTimer);
