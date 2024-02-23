@@ -1,39 +1,45 @@
-// breathing 100 sec
-// breath holding 15 sec
-
+//const _inputs = document.querySelectorAll("input");
 const _startBtn = document.querySelector("#start-btn");
 const _timer = document.querySelector(".timer");
 
-let breathingSeconds;
-let holdingSeconds;
+let sessions = document.querySelector("#sessions").value;
+let seconds = document.querySelector("#seconds").value;
+sessions = parseInt(sessions);
+seconds = parseInt(seconds);
 
-const startBreathingTimer = () => {
-    let sessions = document.getElementById("sessions").value;
-    let seconds = document.getElementById("seconds").value;
-    
-    breathingSeconds = parseInt(seconds) + 1;
-    holdingSeconds = 16;
+let holding = 15;
 
-    _startBtn.disabled = true;
- 
-    const timer = setInterval(() => {
-        breathingSeconds--;
-        _timer.innerHTML = `${breathingSeconds}`;
+function initBreathingTimer() {
+    let amountOfSessions = sessions;
+    let amountOfSeconds = seconds;
+    let amountOfHolding = holding;
 
-        if (breathingSeconds === 0) {
-            clearInterval(timer);
+    function startTimer() {
+        const timer = setInterval(() => {
+            _timer.innerHTML = `${amountOfSeconds}`;
             
-            const holdingTimer = setInterval(() => {
-                holdingSeconds--;
-                _timer.innerHTML = `${holdingSeconds}`;
+            amountOfSeconds--;
+
+            if (amountOfSeconds < -1) {
+                _timer.innerHTML = `${amountOfHolding}`;
+
+                amountOfHolding--;
                 
-                if (holdingSeconds === 0) {
-                    clearInterval(holdingTimer);
-                    _startBtn.disabled = false;
+                if (amountOfHolding < 0) {
+                    amountOfSeconds = seconds;
+                    amountOfHolding = holding;
+                    
+                    amountOfSessions--;
+                
+                    if (amountOfSessions === 0) {
+                        clearInterval(timer);
+                    }       
                 }
-            }, 1000)
-        }
-    }, 1000);
+            }
+        }, 1000)  
+    }
+
+    startTimer();
 }
 
-_startBtn.addEventListener("click", startBreathingTimer);
+_startBtn.addEventListener("click", initBreathingTimer);
