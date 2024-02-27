@@ -9,6 +9,12 @@
 <body>
     <div class="main">
         <button id="start-btn">Start</button>
+        <div class="options-sessions">
+            <label for="sessions" class="amount-label">Amount of sessions:</label>
+            <input id="sessions" name="number" type="number" min="1" max="15" value="3">
+            <label for="number" class="seconds-label">Breathing timer in seconds:</label>
+            <input type="number" name="seconds" id="seconds" min="30" max="200" value="100">
+        </div>
         <div class="timer"><!--100--></div>
     </div>
     <script src="script.js"></script>
