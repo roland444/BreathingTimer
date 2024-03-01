@@ -3,19 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <title>Document</title>
 </head>
 <body>
     <div class="main">
-        <button id="start-btn">Start</button>
         <div class="options-sessions">
-            <label for="sessions" class="amount-label">Amount of sessions:</label>
-            <input id="sessions" name="number" type="number" min="1" max="15" value="3">
-            <label for="number" class="seconds-label">Breathing timer in seconds:</label>
-            <input type="number" name="seconds" id="seconds" min="30" max="200" value="100">
+            <label for="sessions">Sessions:</label>
+            <div class="sessions-section">
+                <div class="session">
+                    <span class="identify-number">1</span>
+                    <!--border starts-->
+                    <div class="small-border"></div>
+                    <!--border ends-->
+                    <div class="delete"></div>
+                </div>
+            </div>
+            <!--border starts-->
+            <div class="upper-border"></div>
+            <!--border ends-->
+            <label for="time">Time:</label>
+            <div class="timer-section">
+                <input id="input-time" type="range">
+                <div class="input-value">100</div>
+            </div>
+            <!--border starts-->
+            <div class="lower-border"></div>
+            <!--border ends-->
         </div>
-        <div class="timer"><!--100--></div>
+        <div class="timer">
+            <span class="timer-text">Start</span>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
