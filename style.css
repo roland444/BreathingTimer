@@ -18,6 +18,26 @@ label {
     margin: 0 0 .7rem 0;
 }
 
+input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #1D6767;
+    border-radius: 50px;
+    appearance: none;
+    cursor: pointer;
+    width: 18rem;
+    height: 10px;
+    margin: auto;
+}
+
+input[type=range]::-moz-range-thumb, input[type=range]::-webkit-range-thumb {
+    box-shadow: .5px 2px 2px #000000, 0px 0px 0px #0d0d0d;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #86A826;
+}
+
 .main {
     background-color: rgb(83, 187, 187);
     display: flex;
@@ -59,6 +79,7 @@ label {
 }
 
 .session {
+    box-shadow: .5px 2px 2px #000000, 0px 0px 0px #0d0d0d;
     background-color: #1D6767;
     margin: 0 3px 0 3px;
     width: 90px;
@@ -123,10 +144,6 @@ label {
     margin:  1.5rem 0 .5rem 0;
     width: 400px;
     height: .1rem;
-}
-
-#input-time {
-    margin: auto;
 }
 
 .input-value {
