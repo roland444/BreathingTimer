@@ -4,8 +4,8 @@ const _timer = document.querySelector(".timer");
 
 let sessions = document.querySelector("#sessions").value;
 let seconds = document.querySelector("#seconds").value;
-sessions = parseInt(sessions);
-seconds = parseInt(seconds);
+
+[sessions, seconds] = [parseInt(sessions), parseInt(seconds)];
 
 let holding = 15;
 
@@ -17,18 +17,14 @@ function initBreathingTimer() {
     function startTimer() {
         const timer = setInterval(() => {
             _timer.innerHTML = `${amountOfSeconds}`;
-            
             amountOfSeconds--;
 
             if (amountOfSeconds < -1) {
                 _timer.innerHTML = `${amountOfHolding}`;
-
                 amountOfHolding--;
                 
                 if (amountOfHolding < 0) {
-                    amountOfSeconds = seconds;
-                    amountOfHolding = holding;
-                    
+                    [amountOfSeconds, amountOfHolding] = [seconds, holding]
                     amountOfSessions--;
                 
                     if (amountOfSessions === 0) {
@@ -38,7 +34,6 @@ function initBreathingTimer() {
             }
         }, 1000)  
     }
-
     startTimer();
 }
 
