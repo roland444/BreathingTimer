@@ -121,7 +121,7 @@ input[type=range]::-moz-range-thumb, input[type=range]::-webkit-range-thumb {
     cursor: pointer;
 }
 
-/* === Time section*/
+/* === Time section === */
 
 .timer-section {
     display: flex;
@@ -179,6 +179,10 @@ input[type=range]::-moz-range-thumb, input[type=range]::-webkit-range-thumb {
     display: none;
 }
 
+.tego {
+    background-color: pink;
+}
+
 .timer {
     margin: 200px auto;
     width: 450px;
@@ -196,3 +200,42 @@ input[type=range]::-moz-range-thumb, input[type=range]::-webkit-range-thumb {
     padding-top: 100px;
 }
 
+.ending-container {
+    display: flex;
+    background-color: #174F4F;
+    width: 75%;
+    border-radius: 30px;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 200px auto;
+    color: #F2EB3E;
+    cursor: default;
+}
+
+.ending-container p {
+    margin: auto;
+    display: block;
+    font-size: 75px;
+}
+
+.ending-container span {
+    margin: auto;
+    display: block;
+    font-size: 35px;
+    padding: 10px;
+}
+
+#menu-btn {
+    display: block;
+    width: 100px;
+    height: 50px;
+    background-color: #c9c328;
+    border: 3px solid #f2c83e;
+    border-radius: 10px;
+    color: #f3f3f3;
+    font-size: 25px;
+    cursor: pointer;
+    text-shadow: 1px 1px 1px #000000, 1px 1px 1px #0d0d0d;
+}

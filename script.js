@@ -84,7 +84,11 @@ function initBreathingTimer() {
         `;
 
         function startTimer() {
+            const background = document.querySelector(".breathing-background");
             const timeLeft = document.querySelector(".time-left");
+            
+            
+
             const timer = setInterval(() => {
                 timeLeft.innerHTML = `${amountOfSeconds}`;
                 amountOfSeconds--;
@@ -99,6 +103,29 @@ function initBreathingTimer() {
                             
                         if (amountOfSessions === 0) {
                             clearInterval(timer);
+                            
+                            background.classList.add("disable");
+                            
+                            body.innerHTML = `
+                                <div class="ending-container">
+                                    <p>Congratulations!</p>
+                                    <span>You achived all ${(sessionsAmount.innerText == 1) ? sessionsAmount.innerText + " session" : sessionsAmount.innerText + " sessions"}</span>
+                                    <button id="menu-btn">Menu</button>
+                                </div>
+                            `;
+                            
+                            const endingDiv = document.querySelector(".ending-container");
+                            const menuBtn = document.querySelector("#menu-btn");
+
+                            
+                            menuBtn.addEventListener("click", () => {
+                                endingDiv.remove();
+                                main.classList.remove("disable");
+                                body.appendChild(main);
+                            });
+                            
+                            
+                            
                         }       
                     }
                 }
@@ -107,6 +134,10 @@ function initBreathingTimer() {
         startTimer();
     }, 1500)
 }
+
+
+
+
 
 
 
