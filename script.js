@@ -1,21 +1,24 @@
-//const _inputs = document.querySelectorAll("input");
-// const _startBtn = document.querySelector("#start-btn");
-// const _timer = document.querySelector(".timer");
-
-// let sessions = document.querySelector("#sessions").value;
-// let seconds = document.querySelector("#seconds").value;
-
-// sessions settings
+// === Sessions section DOOM Elemetns ===
 
 const addButton = document.querySelector(".add-session");
 const rmvButton = document.querySelector(".remove-session");
 const sessionsAmount = document.querySelector("#session-value");
 
+// === Time section DOOM Elements ===
+
+const timeInput = document.querySelector("#input-time");
+const timeShow = document.querySelector(".time-value");
+
+// === window.onload ===
 
 window.onload = () => {
     sessionsAmount.innerHTML = 3;
+    timeShow.innerHTML = 100;
+    timeInput.value = 100;
 
 }
+
+// ============= Sessions sectionn =============
 
 function addSession() {
     if (sessionsAmount.innerHTML === "10") {
@@ -38,21 +41,18 @@ function rmvSession() {
     
 }
 
+// ============= Time section =============
 
+timeInput.addEventListener("input", () => {
+    timeShow.innerHTML = timeInput.value;
+})
+
+// === Event Listeners ===
 
 addButton.addEventListener("click", addSession);
 
 rmvButton.addEventListener("click", rmvSession);
 
-
-//if (sessionsAmount.innerText)
-
-
-// Event Listeners
-
-
-
-//rmvButton.addEventListener("click", rmvSession);
 
 
 
