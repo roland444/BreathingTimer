@@ -1,3 +1,6 @@
+const body = document.querySelector("body");
+const main = document.querySelector(".main");
+
 // === Sessions section DOOM Elemetns ===
 
 const addButton = document.querySelector(".add-session");
@@ -6,8 +9,12 @@ const sessionsAmount = document.querySelector("#session-value");
 
 // === Time section DOOM Elements ===
 
-const timeInput = document.querySelector("#input-time");
+const timeInput = document.querySelector("#time-input");
 const timeShow = document.querySelector(".time-value");
+
+// === Start section DOOM Elemets ===
+
+const startBtn = document.querySelector(".start");
 
 // === window.onload ===
 
@@ -19,6 +26,11 @@ window.onload = () => {
 }
 
 // ============= Sessions sectionn =============
+
+addButton.addEventListener("click", addSession);
+
+rmvButton.addEventListener("click", rmvSession);
+
 
 function addSession() {
     if (sessionsAmount.innerHTML === "10") {
@@ -47,11 +59,54 @@ timeInput.addEventListener("input", () => {
     timeShow.innerHTML = timeInput.value;
 })
 
-// === Event Listeners ===
+// ============= Start section =============
 
-addButton.addEventListener("click", addSession);
+startBtn.addEventListener("click", initBreathingTimer)
 
-rmvButton.addEventListener("click", rmvSession);
+function initBreathingTimer() {
+    let amountOfSessions = sessionsAmount.innerText;
+    let amountOfSeconds = timeInput.value;
+    let holding = 15;
+    let amountOfHolding = holding;
+    
+
+    [amountOfSessions, amountOfSeconds] = [parseInt(amountOfSessions), parseInt(amountOfSeconds)];
+
+    main.classList.add("disable");
+
+    setTimeout(() => {
+        body.innerHTML = `
+            <div class="breathing-background">
+                <div class="timer">
+                    <span class="time-left"></span>
+                </div>
+            </div>
+        `;
+
+        function startTimer() {
+            const timeLeft = document.querySelector(".time-left");
+            const timer = setInterval(() => {
+                timeLeft.innerHTML = `${amountOfSeconds}`;
+                amountOfSeconds--;
+            
+                if (amountOfSeconds < -1) {
+                    timeLeft.innerHTML = `${amountOfHolding}`;
+                    amountOfHolding--;
+                            
+                    if (amountOfHolding < 0) {
+                        [amountOfSeconds, amountOfHolding] = [parseInt(timeInput.value), holding]
+                        amountOfSessions--;
+                            
+                        if (amountOfSessions === 0) {
+                            clearInterval(timer);
+                        }       
+                    }
+                }
+            }, 1000)  
+        }
+        startTimer();
+    }, 1500)
+}
 
 
 
@@ -60,37 +115,6 @@ rmvButton.addEventListener("click", rmvSession);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//[sessions, seconds] = [parseInt(sessions), parseInt(seconds)];
-
-// let holding = 15;
 
 // function initBreathingTimer() {
 //     let amountOfSessions = sessions;

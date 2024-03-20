@@ -75,46 +75,6 @@ input[type=range]::-moz-range-thumb, input[type=range]::-webkit-range-thumb {
     align-items: center;
 }
 
-.sessions-section {
-    display: flex;
-    flex-direction: column;
-}
-
-.timer-section {
-    display: flex;
-    flex-direction: row;
-}
-
-.time-value {
-    font-size: 25px;
-    margin-left: 15px;
-    background-color: #D9D9D9;
-    border-radius: 50px;
-    padding: .3rem;
-    width: 55px;
-    text-align: center;
-    height: 50px;
-}
-
-.timer {
-    width: 200px;
-    height: 200px;
-    margin: auto;
-    text-align: center;
-    background-color: #1D6767;
-    border: 10px solid #86A826;
-    border-radius: 50%;
-}
-
-.timer-text {
-    display: block;
-    margin: 3rem 0 3.5rem 0;
-    text-shadow: .2px 1.5px 1.5px #000000, 0px 0px 0px #0d0d0d;
-    font-size: 45px;
-    font-weight: 400;
-    color: #F2EB3E;
-}
-
 .session {
     box-shadow: .5px 2px 2px #000000, 0px 0px 0px #0d0d0d;
     background-color: #1D6767;
@@ -127,6 +87,11 @@ input[type=range]::-moz-range-thumb, input[type=range]::-webkit-range-thumb {
     align-items: center;
 }
 
+.sessions-section {
+    display: flex;
+    flex-direction: column;
+}
+
 .sessions-amount {
     width: 75px;
     height: 75px;
@@ -136,10 +101,6 @@ input[type=range]::-moz-range-thumb, input[type=range]::-webkit-range-thumb {
     text-align: center;
     color: #F2EB3E;
     font-size: 3rem;
-}
-
-#sessions-value {
-    display: block;
 }
 
 .buttons-container {
@@ -160,6 +121,46 @@ input[type=range]::-moz-range-thumb, input[type=range]::-webkit-range-thumb {
     cursor: pointer;
 }
 
+/* === Time section*/
+
+.timer-section {
+    display: flex;
+    flex-direction: row;
+}
+
+.time-value {
+    font-size: 25px;
+    margin-left: 15px;
+    background-color: #D9D9D9;
+    border-radius: 50px;
+    padding: .3rem;
+    width: 55px;
+    text-align: center;
+    height: 50px;
+}
+
+.start {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    text-align: center;
+    background-color: #1D6767;
+    border: 10px solid #86A826;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.start-text {
+    display: block;
+    margin: 3rem 0 3.5rem 0;
+    text-shadow: .2px 1.5px 1.5px #000000, 0px 0px 0px #0d0d0d;
+    font-size: 45px;
+    font-weight: 400;
+    color: #F2EB3E;
+}
+
+/* === Borders === */
+
 .upper-border {
     background-color: #D9D9D9;
     margin: 1.5rem 0 .5rem 0;
@@ -172,5 +173,26 @@ input[type=range]::-moz-range-thumb, input[type=range]::-webkit-range-thumb {
     margin:  1.5rem 0 .5rem 0;
     width: 400px;
     height: .1rem;
+}
+
+.disable {
+    display: none;
+}
+
+.timer {
+    margin: 200px auto;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background-color: #174F4F;
+}
+
+.time-left {
+    display: block;
+    color: white;
+    text-align: center;
+    font-size: 150px;
+    margin: auto;
+    padding-top: 100px;
 }
 
