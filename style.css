@@ -69,7 +69,19 @@ input[type=range]::-moz-range-thumb, input[type=range]::-webkit-range-thumb {
     margin: 0 0 0 14px;
 }
 
-.options-sessions {
+.options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.session {
+    box-shadow: .5px 2px 2px #000000, 0px 0px 0px #0d0d0d;
+    background-color: #1D6767;
+    margin: 0 3px 0 0;
+    width: 90px;
+    height: 100px;
+    border-radius: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -77,23 +89,62 @@ input[type=range]::-moz-range-thumb, input[type=range]::-webkit-range-thumb {
 
 .sessions-section {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
+
+.sessions-amount {
+    width: 75px;
+    height: 75px;
+    border-radius: 25px;
+    background-color: #1D6767;
+    margin: auto;
+    text-align: center;
+    color: #F2EB3E;
+    font-size: 3rem;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    margin: 10px auto;
+}
+
+.add-session, .remove-session {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50px;
+    margin: 0 10px 0 10px;
+    background-color: #1D6767;
+    color: #F2EB3E;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.chars {
+    display: block;
+    text-align: center;
+}
+
+/* === Time section === */
 
 .timer-section {
     display: flex;
     flex-direction: row;
 }
 
-.input-value {
+.time-value {
     font-size: 25px;
     margin-left: 15px;
     background-color: #D9D9D9;
     border-radius: 50px;
     padding: .3rem;
+    width: 55px;
+    text-align: center;
+    height: 50px;
 }
 
-.timer {
+.start {
     width: 200px;
     height: 200px;
     margin: auto;
@@ -101,9 +152,10 @@ input[type=range]::-moz-range-thumb, input[type=range]::-webkit-range-thumb {
     background-color: #1D6767;
     border: 10px solid #86A826;
     border-radius: 50%;
+    cursor: pointer;
 }
 
-.timer-text {
+.start-text {
     display: block;
     margin: 3rem 0 3.5rem 0;
     text-shadow: .2px 1.5px 1.5px #000000, 0px 0px 0px #0d0d0d;
@@ -112,59 +164,7 @@ input[type=range]::-moz-range-thumb, input[type=range]::-webkit-range-thumb {
     color: #F2EB3E;
 }
 
-.session {
-    box-shadow: .5px 2px 2px #000000, 0px 0px 0px #0d0d0d;
-    background-color: #1D6767;
-    margin: 0 3px 0 3px;
-    width: 90px;
-    height: 100px;
-    border-radius: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.add-session {
-    margin: 0 3px 0 3px;
-    width: 90px;
-    height: 100px;
-    border: 5px solid #D9D9D9;
-    border-radius: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.identify-number {
-    display: block;
-    color: #F2EB3E;
-    font-size: 30px;
-    font-weight: 400;
-}
-
-.next-id-number {
-    display: block;
-    color: #D9D9D9;
-    font-size: 30px;
-    font-weight: 400;
-}
-
-.fa-trash {
-    margin-top: 10px;
-    font-size: 30px;
-}
-
-.fa-plus {
-    margin-top: 5px;
-    font-size: 30px;
-    color: #D9D9D9;
-}
-
-.small-border {
-    background-color: #D9D9D9;
-    width: 3.3rem;
-    height: .1rem;
-}
+/* === Borders === */
 
 .upper-border {
     background-color: #D9D9D9;
@@ -180,3 +180,67 @@ input[type=range]::-moz-range-thumb, input[type=range]::-webkit-range-thumb {
     height: .1rem;
 }
 
+.disable {
+    display: none;
+}
+
+.tego {
+    background-color: pink;
+}
+
+.timer {
+    margin: 200px auto;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background-color: #174F4F;
+}
+
+.time-left {
+    display: block;
+    color: white;
+    text-align: center;
+    font-size: 150px;
+    margin: auto;
+    padding-top: 100px;
+}
+
+.ending-container {
+    display: flex;
+    background-color: #174F4F;
+    width: 75%;
+    border-radius: 30px;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 200px auto;
+    color: #F2EB3E;
+    cursor: default;
+}
+
+.ending-container p {
+    margin: auto;
+    display: block;
+    font-size: 75px;
+}
+
+.ending-container span {
+    margin: auto;
+    display: block;
+    font-size: 35px;
+    padding: 10px;
+}
+
+#menu-btn {
+    display: block;
+    width: 100px;
+    height: 50px;
+    background-color: #c9c328;
+    border: 3px solid #f2c83e;
+    border-radius: 10px;
+    color: #f3f3f3;
+    font-size: 25px;
+    cursor: pointer;
+    text-shadow: 1px 1px 1px #000000, 1px 1px 1px #0d0d0d;
+}

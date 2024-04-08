@@ -15,36 +15,17 @@
         <div class="informations">
             <span class="info-content">?</span>
         </div>
-        <div class="options-sessions">
+        <div class="options">
             <label for="sessions">Sessions:</label>
             <div class="sessions-section">
-                <div class="session">
-                    <span class="identify-number">1</span>
-                    <!--border starts-->
-                    <div class="small-border"></div>
-                    <!--border ends-->
-                    <div class="delete">
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                </div>
-                <div class="session">
-                    <span class="identify-number">2</span>
-                    <!--border starts-->
-                    <div class="small-border"></div>
-                    <!--border ends-->
-                    <div class="delete">
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                </div>
-                <div class="add-session">
-                    <span class="next-id-number">3</span>
-                    <!--border starts-->
-                    <div class="small-border"></div>
-                    <!--border ends-->
-                    <div class="add">
-                        <i class="fa-solid fa-plus"></i>
-                    </div>
-
+                <div class="sessions-amount" id="session-value"></div>
+                <div class="buttons-container">
+                    <button class="add-session">
+                        <span class="chars">+</span>
+                    </button>
+                    <button class="remove-session">
+                        <span class="chars">-</span>
+                    </button>
                 </div>
             </div>
             <!--border starts-->
@@ -52,17 +33,15 @@
             <!--border ends-->
             <label for="time">Time:</label>
             <div class="timer-section">
-                <input id="input-time" type="range">
-                <div class="input-value">
-                    100
-                </div>
+                <input id="time-input" type="range" min="50" max="200" value="100" step="10">
+                <div class="time-value"></div>
             </div>
             <!--border starts-->
             <div class="lower-border"></div>
             <!--border ends-->
         </div>
-        <div class="timer">
-            <span class="timer-text">Start</span>
+        <div class="start">
+            <span class="start-text">Start</span>
         </div>
     </div>
     <script src="script.js"></script>
