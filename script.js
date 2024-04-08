@@ -20,8 +20,9 @@ const startBtn = document.querySelector(".start");
 
 window.onload = () => {
     sessionsAmount.innerHTML = 3;
-    timeShow.innerHTML = 100;
     timeInput.value = 100;
+    timeShow.innerHTML = timeInput.value;
+    
 
 }
 
@@ -87,8 +88,6 @@ function initBreathingTimer() {
             const background = document.querySelector(".breathing-background");
             const timeLeft = document.querySelector(".time-left");
             
-            
-
             const timer = setInterval(() => {
                 timeLeft.innerHTML = `${amountOfSeconds}`;
                 amountOfSeconds--;
@@ -123,9 +122,6 @@ function initBreathingTimer() {
                                 main.classList.remove("disable");
                                 body.appendChild(main);
                             });
-                            
-                            
-                            
                         }       
                     }
                 }
@@ -134,45 +130,3 @@ function initBreathingTimer() {
         startTimer();
     }, 1500)
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function initBreathingTimer() {
-//     let amountOfSessions = sessions;
-//     let amountOfSeconds = seconds;
-//     let amountOfHolding = holding;
-
-//     function startTimer() {
-//         const timer = setInterval(() => {
-//             _timer.innerHTML = `${amountOfSeconds}`;
-//             amountOfSeconds--;
-
-//             if (amountOfSeconds < -1) {
-//                 _timer.innerHTML = `${amountOfHolding}`;
-//                 amountOfHolding--;
-                
-//                 if (amountOfHolding < 0) {
-//                     [amountOfSeconds, amountOfHolding] = [seconds, holding]
-//                     amountOfSessions--;
-                
-//                     if (amountOfSessions === 0) {
-//                         clearInterval(timer);
-//                     }       
-//                 }
-//             }
-//         }, 1000)  
-//     }
-//     startTimer();
-// }
-
-//_startBtn.addEventListener("click", initBreathingTimer);

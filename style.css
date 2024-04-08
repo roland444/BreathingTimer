@@ -117,8 +117,13 @@ input[type=range]::-moz-range-thumb, input[type=range]::-webkit-range-thumb {
     background-color: #1D6767;
     color: #F2EB3E;
     border: none;
-    font-size: 2rem;
+    font-size: 1.5rem;
     cursor: pointer;
+}
+
+.chars {
+    display: block;
+    text-align: center;
 }
 
 /* === Time section === */
